@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Contact;
 
-use App\Entities\PhoneNumbers;
+use App\config\StaticMethods;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Contact\BulkPhoneNumbersRequest;
 use App\Http\Requests\Contact\PhoneRequest;
 use App\Http\Requests\Contact\SearchPhoneRequest;
-use App\Models\StaticMethods;
+use App\Models\PhoneNumbers;
 use App\Services\ContactEntitiesHandler;
 use App\Services\EntitySearchHandler;
 use App\Services\ResponseHandler;

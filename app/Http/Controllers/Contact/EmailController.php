@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Contact;
 
-use App\Entities\Emails;
+use App\config\StaticMethods;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Contact\BulkEmailsRequest;
 use App\Http\Requests\Contact\EmailRequest;
 use App\Http\Requests\Contact\SearchEmailRequest;
-use App\Models\StaticMethods;
+use App\Models\Emails;
 use App\Services\ContactEntitiesHandler;
 use App\Services\EntitySearchHandler;
 use App\Services\ResponseHandler;

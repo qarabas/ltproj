@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Models;
+namespace App\config;
 
 
 class StaticMethods

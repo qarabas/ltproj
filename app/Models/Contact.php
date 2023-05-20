@@ -2,8 +2,6 @@
 
 namespace App\Models;
 
-use App\Entities\Emails;
-use App\Entities\PhoneNumbers;
 use App\Interfaces\ChildrensActions;
 use App\Interfaces\SearchEntity;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

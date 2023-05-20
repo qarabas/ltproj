@@ -1,24 +1,20 @@
 <?php
 
-
-namespace App\Entities;
-
+namespace App\Models;
 
 use App\Interfaces\ContactEntitiesActions;
 use App\Interfaces\SearchEntity;
-use App\Models\Contact;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class PhoneNumbers extends Model implements ContactEntitiesActions, SearchEntity
+class Emails extends Model implements ContactEntitiesActions, SearchEntity
 {
     use HasFactory;
-
-    protected $table = 'phone_numbers';
+    protected $table = 'emails';
     protected $fillable = [
         'id',
-        'phone',
+        'email',
         'contact_id',
     ];
 
@@ -46,8 +42,8 @@ class PhoneNumbers extends Model implements ContactEntitiesActions, SearchEntity
     public function searchEntity(): object
     {
         return self::query()
-            ->select('phone_numbers.id as phone_id', 'contacts.full_name', 'contacts.user_id', 'phone', 'contact_id')
-            ->join('contacts', 'contacts.id', '=', 'phone_numbers.contact_id')
-            ->where('phone','LIKE' ,'%'. $this->phone . '%')->get();
+            ->select('emails.id as email_id', 'contacts.full_name', 'contacts.user_id', 'email', 'contact_id')
+            ->join('contacts', 'contacts.id', '=', 'emails.contact_id')
+            ->where('email','LIKE' ,'%'. $this->email . '%')->get();
     }
 }
